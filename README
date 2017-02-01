@@ -1,0 +1,10 @@
+Add a command line into Reddit via Greasemonkey.
+
+Only supports open and help commands right now.
+
+To open pages, do something like `open 3` to open the third item on page, or
+`open 4..8` to open the 4th through the 8th pages.
+
+Range for open is 1 to 25, inclusive.
+
+There's also a fairly useless help function.

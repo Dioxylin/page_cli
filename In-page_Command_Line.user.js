@@ -50,6 +50,13 @@ var redditOpen = function(args) {
 	}
 }
 
+var help = function() {
+	commandLineOutput.value += "Commands:\n";
+	commandLineOutput.value += "    open num | range [...]    Open a rank or range (e.g. 1 or 2..4)\n";
+	commandLineOutput.value += "    help                      Print this fairly useless help.\n";
+
+}
+
 var parse = function(commandLine) {
 	let commandArray = commandLine.split(/\s+/);
 	let command = commandArray[0];
@@ -59,6 +66,9 @@ var parse = function(commandLine) {
 	switch(command) {
 		case "open":
 			redditOpen(args);
+			break;
+		case "help":
+			help();
 			break;
 		default:
 			unknownCommand(command);
@@ -97,10 +107,10 @@ commandLineDiv.style.bottom = "0px";
 
 var commandLineOutput = document.createElement("textarea");
 commandLineOutput.id = "commandLineOutput";
-commandLineOutput.readonly = true;
+commandLineOutput.readOnly = true;
 commandLineOutput.style.width = "95%";
 commandLineOutput.style.height = "90%";
-commandLineOutput.style.resize = "vertical";
+commandLineOutput.style.resize = "none";
 
 commandLineDiv.appendChild(commandLineOutput);
 
